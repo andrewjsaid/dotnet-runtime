@@ -192,15 +192,13 @@ namespace System.Collections.Frozen
                         {
                             if (analysis.HashCount == 1)
                             {
-                                frozenDictionary = analysis.IgnoreCase
-                                    ? new OrdinalStringFrozenDictionary_RightJustifiedSingleCharCaseInsensitive<TValue>(keys, values, stringComparer, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex)
-                                    : new OrdinalStringFrozenDictionary_RightJustifiedSingleChar<TValue>(keys, values, stringComparer, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex);
+                                var comparison = analysis.IgnoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal;
+                                frozenDictionary = new OrdinalStringFrozenDictionary_RightJustifiedSingleChar<TValue>(keys, values, stringComparer, comparison, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex);
                             }
                             else
                             {
-                                frozenDictionary = analysis.IgnoreCase
-                                    ? new OrdinalStringFrozenDictionary_RightJustifiedSubstringCaseInsensitive<TValue>(keys, values, stringComparer, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex, analysis.HashCount)
-                                    : new OrdinalStringFrozenDictionary_RightJustifiedSubstring<TValue>(keys, values, stringComparer, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex, analysis.HashCount);
+                                var comparison = analysis.IgnoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal;
+                                frozenDictionary = new OrdinalStringFrozenDictionary_RightJustifiedSubstring<TValue>(keys, values, stringComparer, comparison, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex, analysis.HashCount);
                             }
                         }
                     }
@@ -217,15 +215,13 @@ namespace System.Collections.Frozen
                         {
                             if (analysis.HashCount == 1)
                             {
-                                frozenDictionary = analysis.IgnoreCase
-                                    ? new OrdinalStringFrozenDictionary_LeftJustifiedSingleCharCaseInsensitive<TValue>(keys, values, stringComparer, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex)
-                                    : new OrdinalStringFrozenDictionary_LeftJustifiedSingleChar<TValue>(keys, values, stringComparer, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex);
+                                var comparison = analysis.IgnoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal;
+                                frozenDictionary =  new OrdinalStringFrozenDictionary_LeftJustifiedSingleChar<TValue>(keys, values, stringComparer, comparison, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex);
                             }
                             else
                             {
-                                frozenDictionary = analysis.IgnoreCase
-                                    ? new OrdinalStringFrozenDictionary_LeftJustifiedSubstringCaseInsensitive<TValue>(keys, values, stringComparer, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex, analysis.HashCount)
-                                    : new OrdinalStringFrozenDictionary_LeftJustifiedSubstring<TValue>(keys, values, stringComparer, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex, analysis.HashCount);
+                                var comparison = analysis.IgnoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal;
+                                frozenDictionary = new OrdinalStringFrozenDictionary_LeftJustifiedSubstring<TValue>(keys, values, stringComparer, comparison, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex, analysis.HashCount);
                             }
                         }
                     }
