@@ -192,13 +192,11 @@ namespace System.Collections.Frozen
                         {
                             if (analysis.HashCount == 1)
                             {
-                                var comparison = analysis.IgnoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal;
-                                frozenDictionary = new OrdinalStringFrozenDictionary_RightJustifiedSingleChar<TValue>(keys, values, stringComparer, comparison, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex);
+                                frozenDictionary = new OrdinalStringFrozenDictionary_RightJustifiedSingleChar<TValue>(keys, values, stringComparer, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex);
                             }
                             else
                             {
-                                var comparison = analysis.IgnoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal;
-                                frozenDictionary = new OrdinalStringFrozenDictionary_RightJustifiedSubstring<TValue>(keys, values, stringComparer, comparison, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex, analysis.HashCount);
+                                frozenDictionary = new OrdinalStringFrozenDictionary_RightJustifiedSubstring<TValue>(keys, values, stringComparer, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex, analysis.HashCount);
                             }
                         }
                     }
@@ -215,13 +213,11 @@ namespace System.Collections.Frozen
                         {
                             if (analysis.HashCount == 1)
                             {
-                                var comparison = analysis.IgnoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal;
-                                frozenDictionary =  new OrdinalStringFrozenDictionary_LeftJustifiedSingleChar<TValue>(keys, values, stringComparer, comparison, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex);
+                                frozenDictionary =  new OrdinalStringFrozenDictionary_LeftJustifiedSingleChar<TValue>(keys, values, stringComparer, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex);
                             }
                             else
                             {
-                                var comparison = analysis.IgnoreCase ? StringComparison.OrdinalIgnoreCase : StringComparison.Ordinal;
-                                frozenDictionary = new OrdinalStringFrozenDictionary_LeftJustifiedSubstring<TValue>(keys, values, stringComparer, comparison, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex, analysis.HashCount);
+                                frozenDictionary = new OrdinalStringFrozenDictionary_LeftJustifiedSubstring<TValue>(keys, values, stringComparer, analysis.MinimumLength, analysis.MaximumLengthDiff, analysis.HashIndex, analysis.HashCount);
                             }
                         }
                     }
